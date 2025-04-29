@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Reminders - Virtual Plant Assistant</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Set Watering Reminder</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="features.html">Features</a>
+      <a href="reminders.html">Reminders</a>
+      <a href="scanner.html">Plant Scanner</a>
+      <a href="signup.html">Sign Up</a>
+      <a href="signin.html">Sign In</a>
+    </nav>
+  </header>
+
+  <section class="auth-form">
+    <form id="reminderForm">
+      <input type="text" id="plantName" placeholder="Enter Plant Name" required />
+      <input type="datetime-local" id="reminderTime" required />
+      <button type="submit">Set Reminder</button>
+    </form>
+    <div id="reminderOutput"></div>
+  </section>
+
+  <script>
+    document.getElementById('reminderForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const plant = document.getElementById('plantName').value;
+      const time = document.getElementById('reminderTime').value;
+      
+      // Save reminder in localStorage
+      localStorage.setItem('plantReminder', JSON.stringify({ plant, time }));
+      document.getElementById('reminderOutput').innerHTML = `<p>✅ Reminder set for <b>${plant}</b> on <b>${time}</b></p>`;
+
+      // Check every 30 seconds for demo purposes
+      setInterval(function() {
+        const now = new Date().toISOString().slice(0, 16);
+        const reminder = JSON.parse(localStorage.getItem('plantReminder'));
+        if (reminder && reminder.time === now) {
+          alert(`💧 Reminder: Time to water your plant, ${reminder.plant}!`);
+          localStorage.removeItem('plantReminder');
+        }
+      }, 30000);
+    });
+  </script>
+</body>
+</html>

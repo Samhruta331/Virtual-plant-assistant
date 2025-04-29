@@ -1,0 +1,102 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: #f4fff4;
+    color: #333;
+  }
+  
+  header {
+    background: #2e7d32;
+    padding: 1em;
+    color: white;
+    text-align: center;
+  }
+  
+  nav {
+    margin-top: 10px;
+  }
+  
+  nav a {
+    margin: 0 15px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .hero {
+    padding: 5em 2em;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+  }
+  
+  .overlay {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2em;
+    border-radius: 10px;
+    display: inline-block;
+  }
+  
+  .btn {
+    margin-top: 1em;
+    padding: 0.8em 1.5em;
+    background: #66bb6a;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .features, .tips, .about, .auth-form {
+    padding: 2em;
+    text-align: center;
+  }
+  
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    justify-content: center;
+  }
+  
+  .card {
+    background: white;
+    padding: 1.5em;
+    border-radius: 15px;
+    width: 250px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  }
+  
+  img {
+    max-width: 80%;
+    margin-top: 1em;
+    border-radius: 10px;
+  }
+  
+  input, textarea {
+    width: 80%;
+    margin: 0.5em 0;
+    padding: 0.8em;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  button {
+    background-color: #388e3c;
+    color: white;
+    padding: 0.7em 2em;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+  }
+  
+  footer {
+    background: #2e7d32;
+    color: white;
+    text-align: center;
+    padding: 1em;
+    margin-top: 2em;
+  }
+  

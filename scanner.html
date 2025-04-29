@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Plant Scanner – Virtual Plant Assistant</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <h1>Plant Health Scanner</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="features.html">Features</a>
+      <a href="reminders.html">Reminders</a>
+      <a href="scanner.html">Plant Scanner</a>
+      <a href="signup.html">Sign Up</a>
+      <a href="signin.html">Sign In</a>
+    </nav>
+  </header>
+
+  <section class="auth-form">
+    <input type="file" accept="image/*" onchange="previewImage(event)" />
+    <div>
+      <img id="preview" src="" style="max-width:300px; display:none; margin-top:1em;" />
+      <p id="scanResult"></p>
+    </div>
+  </section>
+
+  <script>
+    function previewImage(event) {
+      const preview = document.getElementById('preview');
+      const resultEl = document.getElementById('scanResult');
+      const file = event.target.files[0];
+      if (!file) return;
+
+      // Show the selected image
+      preview.src = URL.createObjectURL(file);
+      preview.style.display = 'block';
+
+      // Simulate analysis
+      resultEl.innerText = '🧪 Analyzing…';
+      setTimeout(() => {
+        resultEl.innerText = '✅ Your plant looks healthy! No issues found.';
+      }, 2000);
+    }
+  </script>
+</body>
+</html>

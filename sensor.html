@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Live Sensor Data - Virtual Plant Assistant</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Live Sensor Data</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="features.html">Features</a>
+      <a href="reminders.html">Reminders</a>
+      <a href="scanner.html">Plant Scanner</a>
+      <a href="signup.html">Sign Up</a>
+      <a href="signin.html">Sign In</a>
+    </nav>
+  </header>
+
+  <section class="features">
+    <h2>Sensor Simulation</h2>
+    <button onclick="generateSensors()">Get Sensor Data</button>
+    <div id="sensorOutput"></div>
+  </section>
+
+  <script>
+    function generateSensors() {
+      const t = (Math.random()*10+20).toFixed(1);
+      const h = (Math.random()*30+40).toFixed(1);
+      const m = (Math.random()*50+20).toFixed(1);
+      document.getElementById('sensorOutput').innerHTML = `
+        🌡️ Temperature: ${t} °C<br/>
+        💧 Humidity: ${h}%<br/>
+        🪴 Soil Moisture: ${m}%
+      `;
+    }
+  </script>
+</body>
+</html>
